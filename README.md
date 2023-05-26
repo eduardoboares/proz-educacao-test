@@ -106,7 +106,7 @@ Technologies used in development.
   <p align="center">
     <img height="400" alt="bull-board-printscreen" src=".github\bull-board-printscreen.png">
   </p>
-</details><br><br>
+</details><br>
 
 # 💻 Getting started<br>
 
@@ -151,6 +151,7 @@ $ pnpm dev
 
 # Well done, project is started!
 ```
+<br>
 
 # 📝 License
 
