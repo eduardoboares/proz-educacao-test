@@ -75,8 +75,6 @@ Build a Node.js RESTful API with background job (queues) to consume and process 
 ● REST;
 
 ● JSON.
-
-● JSON.
 <br><br>
 
 # 🌐 Technologies<br>
@@ -153,11 +151,10 @@ $ pnpm dev
 
 # Well done, project is started!
 ```
-<br>
 
 # 📝 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.<br><br><br><br><br>
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.<br><br><br><br>
 
 <div align="center">
 👉🏼  <a href="https://www.linkedin.com/in/eduardo-pereira-boares/">See my Linkedin</a>  👈🏼
