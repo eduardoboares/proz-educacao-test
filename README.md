@@ -64,15 +64,17 @@ Build a Node.js RESTful API with background job (queues) to consume and process 
 
 ● NodeJS;
 
-● Utilização do Docker;
+● Use of Docker;
 
-● Testes concluídos;
+● Completed tests;
 
 ● Git/Gitlab/Github/Bitbucket;
 
-● Utilização de Fila;
+● Queue Usage;
 
-● DESCANSO;
+● REST;
+
+● JSON.
 
 ● JSON.
 <br><br>
