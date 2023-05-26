@@ -1,0 +1,59 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider          = "postgresql"
+    url               = env("PG_URL")
+    // shadowDatabaseUrl = env("PG_SHADOW_URL")
+}
+
+enum CIVIL_STATUS {
+    SINGLE  @map("SOLTEIRO(A)")
+    MARRIED @map("CASADO(A)")
+
+    @@map("civil_status")
+}
+
+enum GENDER_TYPES {
+    MALE   @map("Masculino")
+    FEMALE @map("Feminino")
+
+    @@map("gender_types")
+}
+
+model Students {
+    id           String      @id @default(uuid()) @db.VarChar(40)
+    name         String      @db.VarChar(35)
+    email        String      @unique @db.VarChar(255)
+    cpf          String      @unique @db.VarChar(11)
+    rg           String      @unique @db.VarChar(14)
+    civil_status CIVIL_STATUS
+    gender       GENDER_TYPES
+    birth_date   DateTime    @default(now())
+    created_at   DateTime?    @default(now())
+    updated_at   DateTime?    @default(now())
+
+    @@map("students")
+}
+
+enum SPREADSHEET_STATUS {
+    PROCESSING @map("Processando")
+    CONCLUDED  @map("Concluído")
+    FAILED     @map("Falhou")
+
+    @@map("spreadsheet_status")
+}
+
+model Spreadsheets {
+    id           String            @id @default(uuid()) @db.VarChar(40)
+    name         String            @db.VarChar(35)
+    processing_status SPREADSHEET_STATUS? @default(PROCESSING)
+    created_at   DateTime?          @default(now())
+    updated_at   DateTime?          @default(now())
+
+    @@map("spreadsheets")
+}

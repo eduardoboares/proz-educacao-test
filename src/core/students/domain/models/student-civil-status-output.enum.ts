@@ -1,0 +1,4 @@
+export enum CIVIL_STATUS_OUTPUT {
+    SINGLE = 'SOLTEIRO(A)',
+    MARRIED = 'CASADO(A)'
+};

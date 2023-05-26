@@ -1,0 +1,85 @@
+{
+    "author": "Eduardo Pereira Boares - eduardop.boares@gmail.com",
+    "name": "proz-educacao-test",
+    "version": "1.0.0",
+    "description": "",
+    "main": "src/app.ts",
+    "scripts": {
+        "start": "tsx src/app.ts",
+        "dev": "pnpm dev:server & pnpm dev:queue",
+        "dev:server": "tsx watch src/app.ts",
+        "dev:queue": "tsx watch src/queue.ts",
+        "build": "tsup src",
+        "test": "vitest",
+        "prettier": "prettier --write src/*/.ts",
+        "lint": "eslint . --ext .ts",
+        "prepare": "husky install",
+        "commit": "git-cz"
+    },
+    "dependencies": {
+        "@bull-board/api": "^5.2.0",
+        "@bull-board/express": "^5.2.0",
+        "@bull-board/ui": "^5.2.0",
+        "@prisma/client": "^4.14.1",
+        "body-parser": "^1.20.2",
+        "bull": "^4.10.4",
+        "bullAdapter": "link:@bull-board/api/bullAdapter",
+        "dotenv": "^16.0.3",
+        "express": "^4.18.2",
+        "i": "^0.3.7",
+        "inversify": "^6.0.1",
+        "inversify-binding-decorators": "^4.0.0",
+        "inversify-express-utils": "^6.4.3",
+        "lodash": "^4.17.21",
+        "multer": "1.4.5-lts.1",
+        "npm": "^9.6.7",
+        "reflect-metadata": "^0.1.13",
+        "remove": "^0.1.5",
+        "typescript": "^4.5.4",
+        "xlsx": "^0.18.5",
+        "xslx": "^1.0.0"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^8.3.5",
+        "@commitlint/config-conventional": "^17.4.2",
+        "@types/bull-board": "^2.0.0",
+        "@types/express": "^4.17.17",
+        "@types/lodash": "^4.14.194",
+        "@types/multer": "^1.4.7",
+        "@types/node": "^20.2.3",
+        "@types/supertest": "^2.0.12",
+        "@typescript-eslint/eslint-plugin": "^5.49.0",
+        "@typescript-eslint/parser": "^5.49.0",
+        "cz-conventional-changelog": "^3.3.0",
+        "eslint": "^8.32.0",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-config-prettier": "^8.6.0",
+        "eslint-import-resolver-typescript": "^3.5.3",
+        "eslint-plugin-import": "^2.27.5",
+        "eslint-plugin-prettier": "^4.2.1",
+        "husky": "^8.0.0",
+        "lint-staged": "^12.4.1",
+        "prettier": "^2.0.4",
+        "prisma": "^4.14.1",
+        "supertest": "^6.3.3",
+        "tsconfig-paths": "^3.9.0",
+        "tsup": "^6.5.0",
+        "tsx": "^3.12.2",
+        "vite-require": "^0.2.3",
+        "vitest": "^0.31.1"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged",
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+        }
+    },
+    "lint-staged": {
+        "*.ts": [
+            "pnpm prettier",
+            "pnpm lint"
+        ]
+    },
+    "keywords": [],
+    "license": "ISC"
+}
